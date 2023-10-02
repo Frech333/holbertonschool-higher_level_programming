@@ -9,3 +9,4 @@ if __name__ == "__main__":
         for i in range(1, count):
             add += int(argv.__getitem__(i))
         print("{}".format(add))
+        

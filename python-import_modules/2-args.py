@@ -10,3 +10,4 @@ if __name__ == "__main__":
             print("{}: {}".format(i, argv.__getitem__(i)))
     else:
         print("{} arguments.".format(len(argv) - 1))
+        
