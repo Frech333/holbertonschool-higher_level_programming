@@ -1,39 +1,75 @@
 #!/usr/bin/python3
-"""Square class defination"""
+"""Square generation module for Python project 0x06
+"""
 
 
 class Square:
-    """Square class body"""
+    """Class defined for square generation.
 
-    def __init__(self, size):
-        """Square contructor
-        Args:
-            size (int): The size of the new square.
-        """
+    Args:
+        size (int): length of one side of square
+
+    Attributes:
+        __size (int): length of one side of square
+
+    """
+
+    def __init__(self, size=0):
+        # attribute assigment here engages setters defined below
         self.size = size
 
     @property
     def size(self):
-        """Square setter and getter for __size."""
-        return (self.__size)
+        """__size getter, setter with same method name
+
+        Returns:
+            __size (int): length of one side, squared
+
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
+        """Args:
+            value (int): length of one side of square
+
+        Attributes:
+            __size (int): length of one side of square
+
+        Raises:
+            TypeError: if value is not an integer
+            ValueError: if value is less than 0
+
+        """
+        if type(value) is not int:
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
         self.__size = value
 
     def area(self):
-        """Return th area of a square."""
-        return (self.__size * self.__size)
+        """Calulates area of square.
+
+        Attributes:
+            __size (int): length of one side of square
+
+        Returns:
+            area (int): length of one side, squared
+
+        """
+        area = self.__size * self.__size
+        return area
 
     def my_print(self):
-        """Print stdout the square with the character"""
-        for i in range(0, self.__size):
-            [print("#", end="") for j in range(self.__size)]
-            print("")
-        if self.__size == 0:
-            print("")
-            
+        """Prints text representation of square in hash chars.
+
+        Attributes:
+            __size (int): length of one side of square
+
+        """
+        for row in range(0, self.__size):
+            for col in range(0, self.__size):
+                print("#", end="")
+            print()
+        if self.__size is 0:
+            print()
